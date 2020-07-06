@@ -43,7 +43,9 @@ struct Snake
    
     Point_2D<float> pos{ GRID_WIDTH / 2, GRID_HEIGHT / 2 };
     Point_2D<std::size_t> head{ static_cast<std::size_t>(pos.x), static_cast<std::size_t>(pos.y) };
-    std::vector<Point_2D<std::size_t>> body; 
+    
+	//could maybe use a queue<Point_2D> for body, faster movement?
+	std::vector<Point_2D<std::size_t>> body; 
 
 
     const int& GetSize() const;
