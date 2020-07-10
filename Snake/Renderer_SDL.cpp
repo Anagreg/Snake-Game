@@ -27,7 +27,8 @@ SDLContext::SDLContext(std::size_t window_width, std::size_t window_height) : wi
 
 SDLContext::~SDLContext()
 {
-    SDL_DestroyWindow(window);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window); 
     SDL_Quit();
 }
 
@@ -76,7 +77,7 @@ void Render(SDLContext& context, Game const& game)
    
         SDL_Rect block;
         block.w = SCREEN_WIDTH / GRID_WIDTH;
-        block.h = SCREEN_WIDTH / GRID_HEIGHT;
+        block.h = SCREEN_HEIGHT / GRID_HEIGHT;
 
         // Clear screen
         SDL_SetRenderDrawColor(context.renderer, 0x1E, 0x1E, 0x1E, 0xFF);
